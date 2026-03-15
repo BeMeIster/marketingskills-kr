@@ -8,7 +8,7 @@ New to the terminal and coding agents? Check out the companion guide [Coding for
 
 **Contributions welcome!** Found a way to improve a skill or have a new one to add? [Open a PR](#contributing).
 
-Run into a problem or have a question? [Open an issue](https://github.com/coreyhaines31/marketingskills/issues) — we're happy to help.
+Run into a problem or have a question? Open an issue in your repository — we're happy to help.
 
 ## What are Skills?
 
@@ -96,13 +96,13 @@ Use [npx skills](https://github.com/vercel-labs/skills) to install skills direct
 
 ```bash
 # Install all skills
-npx skills add coreyhaines31/marketingskills
+npx skills add <owner>/<repo>
 
 # Install specific skills
-npx skills add coreyhaines31/marketingskills --skill page-cro copywriting
+npx skills add <owner>/<repo> --skill page-cro copywriting
 
 # List available skills
-npx skills add coreyhaines31/marketingskills --list
+npx skills add <owner>/<repo> --list
 ```
 
 This automatically installs to your `.agents/skills/` directory (and symlinks into `.claude/skills/` for Claude Code compatibility).
@@ -113,7 +113,7 @@ Install via Claude Code's built-in plugin system:
 
 ```bash
 # Add the marketplace
-/plugin marketplace add coreyhaines31/marketingskills
+/plugin marketplace add <owner>/<repo>
 
 # Install all marketing skills
 /plugin install marketing-skills
@@ -124,7 +124,7 @@ Install via Claude Code's built-in plugin system:
 Clone the entire repo and copy the skills folder:
 
 ```bash
-git clone https://github.com/coreyhaines31/marketingskills.git
+git clone https://github.com/<owner>/<repo>.git
 cp -r marketingskills/skills/* .agents/skills/
 ```
 
@@ -133,7 +133,7 @@ cp -r marketingskills/skills/* .agents/skills/
 Add as a submodule for easy updates:
 
 ```bash
-git submodule add https://github.com/coreyhaines31/marketingskills.git .agents/marketingskills
+git submodule add https://github.com/<owner>/<repo>.git .agents/marketingskills
 ```
 
 Then reference skills from `.agents/marketingskills/skills/`.
@@ -150,14 +150,26 @@ Use [SkillKit](https://github.com/rohitg00/skillkit) to install skills across mu
 
 ```bash
 # Install all skills
-npx skillkit install coreyhaines31/marketingskills
+npx skillkit install <owner>/<repo>
 
 # Install specific skills
-npx skillkit install coreyhaines31/marketingskills --skill page-cro copywriting
+npx skillkit install <owner>/<repo> --skill page-cro copywriting
 
 # List available skills
-npx skillkit install coreyhaines31/marketingskills --list
+npx skillkit install <owner>/<repo> --list
 ```
+
+
+### Private Repository Setup
+
+If you want to keep your copy private:
+
+1. Create a private GitHub repo
+2. Push this code into your private repo
+3. Replace `<owner>/<repo>` in the commands above with your private path
+4. (Optional) Update `.claude-plugin/marketplace.json` -> `metadata.repository` to your private URL
+
+All skills and CLIs work the same in private repos; only install/update URLs need to point to your repo.
 
 ## Upgrading from v1.0
 
